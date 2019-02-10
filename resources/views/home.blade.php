@@ -16,8 +16,10 @@
             font-size: 13px;
         }
 
-        .w-100{
-            opacity: 0.5;
+        .full-screen {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
     </style>
@@ -30,7 +32,7 @@
         <a class="nav-link" href="#">MENU</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">ABOUT US</a>
+        <a class="nav-link" href="{{url('about')}}">ABOUT US</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#">CONTACT US</a>
@@ -42,13 +44,13 @@
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="0"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-            <div class="carousel-item active">
+            <div class="carousel-item">
                 <img class="d-block w-100" src="{{asset('img/burger.jpg')}}" data-color="lightblue" alt="First Image">
                 <div class="carousel-caption d-md-block">
                     <h5>First Image</h5>
@@ -82,6 +84,27 @@
 @endsection
 @section('jscontent')
     <script>
+        var $item = $('.carousel-item');
+        var $wHeight = $(window).height();
+        $item.eq(0).addClass('active');
+        $item.height($wHeight);
+        $item.addClass('full-screen');
+
+        $('.carousel img').each(function() {
+            var $src = $(this).attr('src');
+            var $color = $(this).attr('data-color');
+            $(this).parent().css({
+                'background-image' : 'url(' + $src + ')',
+                'background-color' : $color
+            });
+            $(this).remove();
+        });
+
+        $(window).on('resize', function (){
+            $wHeight = $(window).height();
+            $item.height($wHeight);
+        });
+
         $('.carousel').carousel({
             interval: 6000,
             pause: "false"

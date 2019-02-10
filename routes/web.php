@@ -14,10 +14,21 @@ Route::get('/', function(){
     return view('home');
 });
 
-Route::get('admin', function(){
-    return view('admin.home');
-});
+Route::get('about', 'SiteController@getAbout');
 
-Route::get('admin/about', function(){
-    return view('admin.about');
+Route::group(['prefix'=>'admin'], function(){
+    Route::get('/', function(){
+        return view('admin.home');
+    });
+
+    Route::get('about', 'SiteController@getAboutAdmin');
+
+    Route::get('menu', 'MenuController@index');
+
+    Route::post('addcategory', 'MenuController@createCategory');
+
+    Route::post('additem', 'MenuController@addItem');
+    Route::post('addsubitem', 'MenuController@addSubItem');
+
+    Route::post('saveabout', 'SiteController@saveAbout');
 });

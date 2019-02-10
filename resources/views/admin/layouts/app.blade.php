@@ -45,8 +45,12 @@
         }
 
         #content{
-            background: white;
+            background: #4f5b62;
             width: 100%;
+        }
+
+        .content-body{
+            padding: 2%;
         }
 
     </style>
@@ -73,7 +77,10 @@
             </div>
         </nav>
 
-        @yield('content')
+        <div class="content-body">
+            @yield('content')
+        </div>
+
     </div>
 </div>
 

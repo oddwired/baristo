@@ -8,12 +8,17 @@
         <a class="nav-link" href="#">MENU</a>
     </li>
     <li class="nav-item active">
-        <a class="nav-link" href="#">ABOUT US</a>
+        <a class="nav-link" href="{{url('about')}}">ABOUT US</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#">CONTACT US</a>
     </li>
 @endsection
 @section('content')
+    <div class="container">
+        <div class="about">
+            {!! $about->content_data !!}
+        </div>
 
+    </div>
 @endsection

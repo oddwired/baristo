@@ -8,7 +8,7 @@
         <a href="#">LOCATIONS</a>
     </li>
     <li>
-        <a href="#">MENU</a>
+        <a href="{{url('admin/menu')}}">MENU</a>
     </li>
     <li>
         <a href="{{url('admin/about')}}">ABOUT</a>

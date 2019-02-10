@@ -1,6 +1,6 @@
 /*Website Template by freewebsitetemplates.com*/
 body {
-    background:#37464f;
+    background:#fff;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
     line-height: 1;
@@ -17,36 +17,6 @@ label {
     color: #009688;
     font-size: large;
     margin: 10px;
-}
-
-.card-title {
-    margin-right: -15px;
-    margin-left: -15px;
-    background-color: #fff;
-    color: #009688;
-    font-size: large;
-    text-align: center;
-    padding-top: 10px;
-    height: 45px;
-}
-
-.card-body {
-    margin: 20px;
-}
-
-.card {
-    /* Add shadows to create the "card" effect */
-    background: #fff;
-    margin-top: 20px;
-    border-radius: 2px;
-    padding-bottom: 30px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-}
-
-.card-link {
-    font-size: 0.5cm;
-    color: white;
 }
 
 .navbar-custom {
@@ -132,5 +102,29 @@ ul ul a {
 }
 
 .editor {
+    background: white;
     margin: 10px;
+}
+
+.category{
+
+    background: white;
+
+    margin: 2%;
+}
+
+.category-title{
+    background: #B9121B;
+    padding: 5px;
+    text-align: center;
+    color: white;
+    font-size: large;
+}
+
+.category-body{
+    padding: 1%;
+}
+
+.about{
+    max-width: 100vh;
 }
