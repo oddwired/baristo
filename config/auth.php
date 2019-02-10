@@ -80,21 +80,10 @@ return [
     */
 
     'providers' => [
-        'users' => [
-            'driver' => 'database',
-            'model' => Baristo\User::class,
-            'table' => 'users',
-        ],
-
         'admin' => [
             'driver' => 'eloquent',
-            'model' => App\Admin::class,
+            'model' => Baristo\Admin::class,
         ],
-
-        'chairperson' => [
-            'driver' => 'eloquent',
-            'model' => App\Chairman::class,
-        ]
 
         // 'users' => [
         //     'driver' => 'database',
